@@ -1,0 +1,19 @@
+{
+  "name": "my_studio",
+  "version": "1.0.0",
+  "description": "An app for musicians to connect and collaborate across the globe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Eitan Reiffman",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
