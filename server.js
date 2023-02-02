@@ -4,9 +4,10 @@ const app = express()
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    console.log("Here")
     res.render('../templates/views/index')
 })
+
+app.use(express.static('public'))
 
 const userRouter = require('./routes/users')
 app.use('/users', userRouter)

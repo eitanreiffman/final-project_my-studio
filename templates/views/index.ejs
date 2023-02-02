@@ -1,2 +1,49 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/open_header.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <div id="header">
+                <img src="./images/meetmusicians.png" alt="Meet musicians across the globe" width="1000px" class="img-fluid mx-auto d-block m-4">
+            </div>
+            <!-- <h3 class="text-center fw-bold">Read Our Mission Statement <a href="">Here</a></h3> -->
+            <!-- <img src="./images/aboutus.png" alt="About Us"> -->
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <img src="./images/signup.png" alt="" width="200px" class="mx-5 my-3 img-fluid mx-auto d-block">
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-dark text-white fw-bold" id="basic-addon1">@</span>
+                    <input type="text" class="form-control fw-bold" aria-label="username" placeholder="Enter Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control fw-bold" aria-label="email" placeholder="Enter Email" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control fw-bold" aria-label="password" placeholder="Enter Password" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control fw-bold" aria-label="confirm_password" placeholder="Confirm Password" aria-describedby="basic-addon2">
+                </div>
+                <button class="form-control fw-bold" type="submit">Sign Up</button>
+                <h3 class="fw-bold text-center my-3"><a href="">Learn More</a></h3>
+            </div>
+            <div id="main_logo" class="col-md-6">
+                <img src="./images/FullLogo_Transparent_NoBuffer.png" alt="My Studio" width="650px" class="img-fluid mx-auto d-block m-5">
+            </div>
+            <div class="col-md-3">
+                <img src="./images/alreadysigned.png" alt="Already Signed Up" width="250px" class="img-fluid mx-auto d-block">
+                <button class="form-control w-100 my-3 fw-bold fs-1">Log In Here</button>
+                <!-- <img src="./images/login.png" alt="" width="180px" class="mx-5 my-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-white fw-bold" aria-label="username" placeholder="Enter Username" aria-describedby="basic-addon1">
+                    <span class="input-group-text bg-dark text-white fw-bold" id="basic-addon1">@</span>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control bg-white fw-bold" aria-label="password" placeholder="Enter Password" aria-describedby="basic-addon2">
+                    <span class="input-group-text bg-dark text-white fw-bold" id="basic-addon2">password</span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
 <%- include('../partials/footer.ejs') %>
