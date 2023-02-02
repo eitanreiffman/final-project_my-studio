@@ -5,7 +5,7 @@ app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
     console.log("Here")
-    res.render('index')
+    res.render('../templates/views/index')
 })
 
 const userRouter = require('./routes/users')
