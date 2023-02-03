@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
     res.render('../templates/views/index')
 })
 
+app.get('/aboutus', (req, res) => {
+    res.render('../templates/views/aboutus')
+})
+
 app.use(express.static('public'))
 
 const userRouter = require('./routes/users')

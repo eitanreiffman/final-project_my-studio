@@ -25,8 +25,6 @@ router.route('/:id')
     res.send(`Get User With ID ${req.params.id}`)
 })
 
-const users = [{ name: 'Jonah' }, { name: 'Shira' }, { name: 'Eitan' }]
-
 router.param('id', (req, res, next, id) => {
     req.user = users[id]
     next()
