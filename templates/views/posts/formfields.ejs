@@ -1,0 +1,65 @@
+   
+   
+   
+   <form action="/posts" method="POST" class="form-group">
+        <label for="title">Song Title</label>
+        <input id="title" required type="text" name="title" class="form-control"/>
+        <div>
+            <div>
+                <label for="genre">Specify Genre (may choose multiple if applicable)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Rock
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Folk
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Indie
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Hip Hop
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Rap
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Reggae
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Metal
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Jazz
+                </label>
+            </div>
+        </div>
+        <label for="description">Add Description</label>
+        <input id="description" type="text" name="description" class="form-control"/>
+        <label for="file">Upload MP3 File</label>
+        <input id="song" type="file" name="song" class="form-control"/>
+        <button type="submit" class="btn btn-primary form-control mt-3">Post Song</button>
+    </form>

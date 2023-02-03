@@ -19,10 +19,10 @@ router.route('/:id')
     res.send(`Get User With ID ${req.params.id}`)
 })
 .put((req, res) => {
-    res.send(`Get User With ID ${req.params.id}`)
+    res.send(`Update User With ID ${req.params.id}`)
 })
 .delete((req, res) => {
-    res.send(`Get User With ID ${req.params.id}`)
+    res.send(`Delete User With ID ${req.params.id}`)
 })
 
 router.param('id', (req, res, next, id) => {

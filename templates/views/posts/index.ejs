@@ -1,0 +1,22 @@
+<%- include('../../partials/main_header.ejs') %>
+
+    <div class="container">
+        <h1 class="mb-4">Song Library</h1>
+        <a href="/posts/new" class="btn btn-success">Upload New Song</a>
+
+
+        <% posts.forEach(post => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="card-title"><%= post.songTitle %></h4>
+                    <div class="card-subtitle text-muted mb-2">
+                        <%= post.createdAt.toLocaleDateString() %> 
+                    </div>
+                    <div class="card-text mb-2"><%= post.description %></div>
+                </div>
+            </div>
+        <% }) %>
+
+    </div>
+
+<%- include('../../partials/footer.ejs') %>
