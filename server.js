@@ -1,23 +1,32 @@
 const express = require('express')
-const postRouter = require('./routes/posts')
-const userRouter = require('./routes/users')
+const { connectDB } = require('./database');
+const path = require('path');
 const app = express()
+const cookieParser = require('cookie-parser')
+
+const dotenv = require('dotenv')
+dotenv.config();
+
+connectDB();
+
+// Every time I want to access the secret key, call this:
+// process.env.JWT_SECRET;
+
+app.use(cookieParser());
+// Add Cookie Parser before Authenticate
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, '/templates/views'))
 
+
+const postRouter = require('./routes/posts')
 app.use('/posts', postRouter)
 
-app.use('/users', userRouter)
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    res.render('../templates/views/index')
-})
-
-app.get('/aboutus', (req, res) => {
-    res.render('../templates/views/aboutus')
-})
+const initRoutes = require('./routes');
+initRoutes(app)
 
 app.use(express.static('public'))
-
 
 app.listen(3000)

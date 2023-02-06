@@ -1,7 +1,4 @@
-const express = require('express')
-const router = express.Router()
-
-router.get('/', (req, res) => {
+module.exports = (req, res) => {
     const posts = [{
         songTitle: 'Let It Be',
         createdAt: new Date(),
@@ -18,15 +15,5 @@ router.get('/', (req, res) => {
         description: 'A song about a meter maid'
     }
 ]
-    res.render('../templates/views/posts/index', { posts: posts })
-})
-
-router.get('/new', (req, res) => {
-    res.render('../templates/views/posts/new')
-})
-
-router.post('/', (req, res) => {
-    res.render('../templates/views/posts/')
-})
-
-module.exports = router
+    res.render('posts', { posts: posts })
+}
