@@ -9,20 +9,22 @@
         <div class="row align-items-center">
             <div class="col-md-3">
                 <img src="./images/signup.png" alt="" width="200px" class="mx-5 my-3 img-fluid mx-auto d-block">
-                <div class="input-group mb-3">
-                    <span class="input-group-text bg-dark text-white fw-bold" id="basic-addon1">@</span>
-                    <input type="text" class="form-control fw-bold" aria-label="username" placeholder="Enter Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control fw-bold" aria-label="email" placeholder="Enter Email" aria-describedby="basic-addon2">
-                </div>
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control fw-bold" aria-label="password" placeholder="Enter Password" aria-describedby="basic-addon2">
-                </div>
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control fw-bold" aria-label="confirm_password" placeholder="Confirm Password" aria-describedby="basic-addon2">
-                </div>
-                <button class="form-control fw-bold bg-warning-subtle" type="submit">Sign Up</button>
+                <form action="" method="post">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-dark text-white fw-bold" id="basic-addon1">@</span>
+                        <input type="text" name="username" class="form-control fw-bold" aria-label="username" placeholder="Enter Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="email" class="form-control fw-bold" aria-label="email" placeholder="Enter Email" aria-describedby="basic-addon2">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="form-control fw-bold" aria-label="password" placeholder="Enter Password" aria-describedby="basic-addon2">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" name="confirmPass" class="form-control fw-bold" aria-label="confirm_password" placeholder="Confirm Password" aria-describedby="basic-addon2">
+                    </div>
+                    <button class="form-control fw-bold bg-warning-subtle" type="submit">Sign Up</button>
+                </form>
                 <h3 class="fw-bold text-center my-3"><a href="/aboutus">Learn More</a></h3>
             </div>
             <div id="main_logo" class="col-md-6">

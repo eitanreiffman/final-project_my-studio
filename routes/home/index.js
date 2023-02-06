@@ -3,6 +3,7 @@ const HomeRouter = express.Router()
 
 HomeRouter.route('/')
     .get(require('./home.view'))
+    .post(require('./register'))
 
 HomeRouter.route('/aboutus')
     .get(require('./aboutus.view'))
