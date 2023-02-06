@@ -3,6 +3,8 @@ const { connectDB } = require('./database');
 const path = require('path');
 const app = express()
 const cookieParser = require('cookie-parser')
+const { graphqlHTTP } = require('express-graphql')
+const schema = require('./graphql/schema')
 
 const dotenv = require('dotenv')
 dotenv.config();
@@ -14,6 +16,12 @@ connectDB();
 
 app.use(cookieParser());
 // Add Cookie Parser before Authenticate
+
+
+app.use('/graphql', graphqlHTTP ({
+    schema,
+    graphiql: true
+}))
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/templates/views'))
