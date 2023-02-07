@@ -18,4 +18,7 @@ HomeRouter.route('/logout')
 HomeRouter.route('/choose')
     .get(require('./choose.view'))
 
+HomeRouter.route('/users')
+    .get(require('./users.view'))
+
 module.exports = HomeRouter
