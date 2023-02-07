@@ -1,5 +1,87 @@
 <%- include('../partials/main_header.ejs') %>
 
-<h1 class="text-center">What would you like to do now?</h1>
+<div class="container">
+    <h1 class="text-center my-5">Hi, what would you like to do now?</h1>
+    <div class="d-flex justify-content-center" style="height: 500px;">
+        <div class="row text-center bg-primary rounded align-items-center w-50 h-50 m-5" id="newProject">
+            <h1 class="fs-1 fw-bold text-white">Upload a New Project</h1>
+        </div>
+        <div class="row text-center bg-success rounded align-items-center w-50 h-50 m-5" id="existingProject">
+            <h1 class="fs-1 fw-bold text-white">Add to an Existing Project</h1>
+        </div>
+    </div>
+</div>
+
+<script>
+    let newProject = document.getElementById('newProject')
+    let existingProject = document.getElementById('existingProject')
+
+    newProject.addEventListener('mouseover', handleButtonEvent);
+    function handleButtonEvent(event){
+        let elementToChange = event.target;
+        if (elementToChange.className === 'row text-center bg-primary rounded align-items-center w-50 h-50 m-5'){
+        elementToChange.className = 'row text-center bg-secondary rounded align-items-center w-50 h-50 m-5';
+    } else if (
+        elementToChange.className === 'fs-1 fw-bold text-white'
+    ){
+        elementToChange.className = 'fs-1 fw-bold text-white'
+    } else {
+        elementToChange.className = 'row text-center bg-primary rounded align-items-center w-50 h-50 m-5'
+    }
+}
+
+    newProject.addEventListener('mouseleave', handleButtonLeave);
+        function handleButtonLeave(event){
+            let elementToChange = event.target;
+            if (elementToChange.className === 'row text-center bg-primary rounded align-items-center w-50 h-50 m-5'){
+            elementToChange.className = 'row text-center bg-secondary rounded align-items-center w-50 h-50 m-5';
+        } else if (
+            elementToChange.className === 'fs-1 fw-bold text-white'
+        ){
+            elementToChange.className = 'fs-1 fw-bold text-white'
+        } else {
+            elementToChange.className = 'row text-center bg-primary rounded align-items-center w-50 h-50 m-5'
+        }
+    }
+
+    existingProject.addEventListener('mouseover', handleButtonEvent2);
+    function handleButtonEvent2(event){
+        let elementToChange = event.target;
+        if (elementToChange.className === 'row text-center bg-success rounded align-items-center w-50 h-50 m-5'){
+        elementToChange.className = 'row text-center bg-secondary rounded align-items-center w-50 h-50 m-5';
+    } else if (
+        elementToChange.className === 'fs-1 fw-bold text-white'
+    ){
+        elementToChange.className = 'fs-1 fw-bold text-white'
+    } else {
+        elementToChange.className = 'row text-center bg-success rounded align-items-center w-50 h-50 m-5'
+    }
+}
+
+    existingProject.addEventListener('mouseleave', handleButtonLeave2);
+        function handleButtonLeave2(event){
+            let elementToChange = event.target;
+            if (elementToChange.className === 'row text-center bg-success rounded align-items-center w-50 h-50 m-5'){
+            elementToChange.className = 'row text-center bg-secondary rounded align-items-center w-50 h-50 m-5';
+        } else if (
+            elementToChange.className === 'fs-1 fw-bold text-white'
+        ){
+            elementToChange.className = 'fs-1 fw-bold text-white'
+        } else {
+            elementToChange.className = 'row text-center bg-success rounded align-items-center w-50 h-50 m-5'
+        }
+    }
+
+    newProject.addEventListener('click', navigateToNew)
+    function navigateToNew(event){
+        location.href = '/posts/new'
+    }
+
+    existingProject.addEventListener('click', navigateToPosts)
+    function navigateToPosts(event){
+        location.href = '/posts'
+    }
+
+</script>
 
 <%- include('../partials/footer.ejs') %>

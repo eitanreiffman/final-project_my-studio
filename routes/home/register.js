@@ -27,8 +27,13 @@ module.exports = async (req, res) => {
             )
             const JsonWebToken = data.data.register
             res.cookie('JsonWebToken', JsonWebToken, { httpOnly: true })
-            res.redirect('/login')
-            console.log('Successful registration')
+            if (JsonWebToken !== null){
+                res.redirect('/login')
+                console.log('Successful registration')
+            } else {
+                res.redirect('/')
+                console.log('nothing happened')
+            }
         } catch(err) {
             console.log(err)
             res.redirect('/')
