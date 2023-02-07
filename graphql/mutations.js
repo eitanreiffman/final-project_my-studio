@@ -1,5 +1,5 @@
-const { GraphQLString } = require("graphql");
-const { User } = require("../models");
+const { GraphQLString, GraphQLID } = require("graphql");
+const { User, Post } = require("../models");
 const brcrypt = require('bcrypt');
 const { createJSONWebToken } = require('../util/auth')
 
@@ -46,7 +46,29 @@ const login = {
     }
 };
 
+
+const createPost = {
+    type: GraphQLString,
+    description: 'Creates a new post',
+    args: {
+        title: { type: GraphQLString },
+        description: { type: GraphQLString },
+        userId: { type: GraphQLID }
+    },
+    async resolve(parent, args){
+        const post = new Post({
+            title: args.title,
+            description: args.description,
+            userId: args.userId
+        });
+
+        post.save()
+        return post.title
+    }
+}
+
 module.exports = {
     register,
-    login
+    login,
+    createPost
 }

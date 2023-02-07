@@ -15,5 +15,5 @@ module.exports = (req, res) => {
         description: 'A song about a meter maid'
     }
 ]
-    res.render('posts', { posts: posts })
+    res.render('posts', { posts: posts, user: req.verifiedUser })
 }

@@ -1,10 +1,10 @@
    
    
    
-<form action="/posts/new" method="post" class="form-group">
+<form action="" method="post" class="form-group">
     <label for="title">Song Title</label>
-    <input id="title" required type="text" name="title" class="form-control"/>
-    <div>
+    <input required type="text" name="title" class="form-control" value="" placeholder="Enter Song Title"/>
+    <!-- <div>
         <div class="my-2">
             <label for="genre">Specify Genre (may choose multiple if applicable)</label>
         </div>
@@ -56,12 +56,12 @@
             Jazz
             </label>
         </div>
-    </div>
+    </div> -->
     <div class="my-2">    
         <label for="description">Add Description</label>
-        <input id="description" type="text" name="description" class="form-control"/>
+        <input type="text" name="description" class="form-control" placeholder="Enter Song Description"/>
     </div>
-    <label for="file">Upload MP3 File</label>
-    <input id="song" type="file" name="song" class="form-control my-2"/>
+    <!-- <label for="file">Upload MP3 File</label>
+    <input id="song" type="file" name="song" class="form-control my-2"/> -->
     <button type="submit" class="btn btn-primary form-control my-3">Post Song</button>
 </form>
