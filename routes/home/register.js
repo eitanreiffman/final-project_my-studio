@@ -28,9 +28,11 @@ module.exports = async (req, res) => {
             const JsonWebToken = data.data.register
             res.cookie('JsonWebToken', JsonWebToken, { httpOnly: true })
             res.redirect('/login')
+            console.log('Successful registration')
         } catch(err) {
             console.log(err)
             res.redirect('/')
+            console.log('Failure to register user')
         }
     }
 }

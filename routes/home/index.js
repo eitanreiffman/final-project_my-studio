@@ -10,5 +10,12 @@ HomeRouter.route('/aboutus')
 
 HomeRouter.route('/login')
     .get(require('./login.view'))
+    .post(require('./login'))
+
+HomeRouter.route('/logout')
+    .get(require('./logout'))
+
+HomeRouter.route('/choose')
+    .get(require('./choose.view'))
 
 module.exports = HomeRouter

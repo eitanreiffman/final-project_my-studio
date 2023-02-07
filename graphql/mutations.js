@@ -27,6 +27,26 @@ const register = {
     }
 };
 
+const login = {
+    type: GraphQLString,
+    description: 'Log user into the database',
+    args: {
+        username: { type: GraphQLString },
+        password: { type: GraphQLString }
+    },
+    async resolve(parent, args){
+        const user = await User.findOne({ username: args.username });
+        const hashedPassword = user?.password || ""
+        const correctPassword = await brcrypt.compare(args.password, hashedPassword);
+        if (!user || !correctPassword){
+            throw new Error('Sorry, invalid credentials.')
+        }
+        const token = createJSONWebToken(user);
+        return token
+    }
+};
+
 module.exports = {
-    register
+    register,
+    login
 }
