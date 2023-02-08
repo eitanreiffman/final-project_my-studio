@@ -3,7 +3,7 @@
    
 <form action="" method="post" class="form-group">
     <label for="title">Song Title</label>
-    <input required type="text" name="title" class="form-control" value="" placeholder="Enter Song Title"/>
+    <input required type="text" name="title" id="title" class="form-control" value="<%= post.title %>" placeholder="Enter Song Title"/>
     <!-- <div>
         <div class="my-2">
             <label for="genre">Specify Genre (may choose multiple if applicable)</label>
@@ -59,7 +59,7 @@
     </div> -->
     <div class="my-2">    
         <label for="description">Add Description</label>
-        <input type="text" name="description" class="form-control" placeholder="Enter Song Description"/>
+        <input required type="text" name="description" id="description" value="<%= post.description %>" class="form-control" placeholder="Enter Song Description"/>
     </div>
     <!-- <label for="file">Upload MP3 File</label>
     <input id="song" type="file" name="song" class="form-control my-2"/> -->

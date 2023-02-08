@@ -30,7 +30,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/templates/views'))
 
 app.use(express.urlencoded({ extended: true }));
-
+// URL Encoder must be executed before Routes are instantiated
 const initRoutes = require('./routes');
 initRoutes(app)
 

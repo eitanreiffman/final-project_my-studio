@@ -1,10 +1,10 @@
 const axios = require('axios')
 
 module.exports = async (req, res) => {
+    let id = req.params.id
     const query = `
-        query{
-            posts {
-            id
+        query ($id: ID!){
+            post(id: $id){
             title
             description
         }
@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
     const { data } = await axios.post(process.env.GRAPHQL_ENDPOINT,
         {
             query: query,
-            variables: null
+            variables: { id }
         },
         {
             headers: {
@@ -21,7 +21,8 @@ module.exports = async (req, res) => {
             }
         }
     )
-    const posts = data.data.posts
+    const post = data.data.post
 
-    res.render('posts', { posts: posts, user: req.verifiedUser })
+    res.render('posts/viewPost', {user: req.verifiedUser, post: post} )
 }
+

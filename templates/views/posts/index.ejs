@@ -8,11 +8,11 @@
         <% posts.forEach(post => { %>
             <div class="card mt-4">
                 <div class="card-body">
-                    <h4 class="card-title"><%= post.songTitle %></h4>
-                    <div class="card-subtitle text-muted mb-2">
-                        <%= post.createdAt.toLocaleDateString() %> 
-                    </div>
+                    <h4 class="card-title"><%= post.title %></h4>
                     <div class="card-text mb-2"><%= post.description %></div>
+                    <!-- <audio id="audio1">
+                        <source src="../../../public/songs/i_miss_you.mp3" type="audio/mpeg">
+                    </audio> -->
                 </div>
             </div>
         <% }) %>

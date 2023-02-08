@@ -32,12 +32,13 @@ module.exports = async (req, res) => {
             }
         )
         console.log(data)
+        const postId = data.data.createPost
+        res.redirect(`/posts/${postId}`)
+        console.log('Post successful')
     } catch(err){
         console.log(err)
         console.log('Post not successful')
     }
-    console.log('Post successful')
-    res.redirect('/posts')
 };
 
 

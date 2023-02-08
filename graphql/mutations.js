@@ -48,7 +48,7 @@ const login = {
 
 
 const createPost = {
-    type: GraphQLString,
+    type: GraphQLID,
     description: 'Creates a new post',
     args: {
         title: { type: GraphQLString },
@@ -63,7 +63,8 @@ const createPost = {
         });
 
         post.save()
-        return post.title
+        return post.id
+        // res.redirect(`/posts/${post.id}`)
     }
 }
 
