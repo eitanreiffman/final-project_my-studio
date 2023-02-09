@@ -7,6 +7,9 @@ const { graphqlHTTP } = require('express-graphql')
 const schema = require('./graphql/schema')
 const { authenticate } = require('./middleware/auth')
 const methodOverride = require('method-override')
+const cors = require('cors')
+
+app.use(cors())
 
 const dotenv = require('dotenv')
 dotenv.config();

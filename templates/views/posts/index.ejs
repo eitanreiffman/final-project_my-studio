@@ -1,7 +1,7 @@
 <%- include('../../partials/main_header.ejs') %>
 
     <div class="container">
-        <h1 class="my-4 text-center">Song Library</h1>
+        <img src="/images/song_library.png" width="450px" alt="Song Library" class="img-fluid mx-auto d-block my-5">
         <a href="/posts/new" class="btn btn-success">Upload New Song</a>
 
 
@@ -10,13 +10,49 @@
                 <div class="card-body">
                     <h4 class="card-title"><%= post.title %></h4>
                     <div class="card-text mb-2"><%= post.description %></div>
-                    <!-- <audio id="audio1">
-                        <source src="../../../public/songs/i_miss_you.mp3" type="audio/mpeg">
-                    </audio> -->
+                    <button class="btn btn-primary" data-songURL="https://p.scdn.co/mp3-preview/2a75235e1503256176f3552aeaa51de84eb23030?cid=cfc9b12363734e67b80643c87896ddfd">Play Song</button>
+                    <button class="btn btn-danger">Stop</button>
                 </div>
             </div>
         <% }) %>
 
     </div>
+
+<script>
+
+var playSong;
+
+const startSongButton = e => {
+    let button = e.target;
+    let url = button.dataset.songurl;
+    if (playSong){
+        playSong.pause()
+    };
+    playSnippet(url);
+};
+
+const playSnippet = async songURL => {
+    try{
+        playSong = new Audio(songURL);
+        playSong.play();
+    } catch(err){
+        console.log(err)
+    }
+};
+
+const stopSnippet = () => {
+    playSong.pause();
+};
+
+const buttons = document.getElementsByTagName('button');
+
+for (let button of buttons){
+    button.addEventListener('click', startSongButton);
+};
+
+const stopButton = document.getElementById('songStopper');
+stopButton.addEventListener('click', stopSnippet);
+
+</script>
 
 <%- include('../../partials/footer.ejs') %>
