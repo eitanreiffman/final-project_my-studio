@@ -14,6 +14,7 @@ PostRouter.route('/new')
 
 PostRouter.route('/:id')
     .get(require('./viewPost'))
+    .delete(require('./delete'))
     
 // PostRouter.post('/new', upload.single('song'), (req, res) => {
 //         console.log(req.file, req.body)

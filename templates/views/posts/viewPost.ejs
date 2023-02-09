@@ -11,6 +11,9 @@
             <!-- <audio id="audio1">
                 <source src="../../../public/songs/i_miss_you.mp3" type="audio/mpeg">
             </audio> -->
+            <form action="posts/<%= post.id %>?_method=DELETE" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         </div>
     </div>
 </div>

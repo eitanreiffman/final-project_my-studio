@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const { graphqlHTTP } = require('express-graphql')
 const schema = require('./graphql/schema')
 const { authenticate } = require('./middleware/auth')
+const methodOverride = require('method-override')
 
 const dotenv = require('dotenv')
 dotenv.config();
@@ -30,6 +31,8 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/templates/views'))
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'))
+
 // URL Encoder must be executed before Routes are instantiated
 const initRoutes = require('./routes');
 initRoutes(app)

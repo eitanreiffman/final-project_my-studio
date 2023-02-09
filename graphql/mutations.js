@@ -2,7 +2,7 @@ const { GraphQLString, GraphQLID } = require("graphql");
 const { User, Post } = require("../models");
 const brcrypt = require('bcrypt');
 const { createJSONWebToken } = require('../util/auth')
-
+const { PostType } = require('./types')
 
 
 const register = {
@@ -49,7 +49,7 @@ const login = {
 
 const createPost = {
     type: GraphQLID,
-    description: 'Creates a new post',
+    description: 'Create a new post',
     args: {
         title: { type: GraphQLString },
         description: { type: GraphQLString },
@@ -68,8 +68,21 @@ const createPost = {
     }
 }
 
+const deletePost = {
+    type: PostType,
+    description: 'Delete a specific post by ID',
+    args: {
+        id: { type: GraphQLID }
+    },
+    resolve(parent, args){
+        return Post.findByIdAndDelete(args.id)
+    }
+
+}
+
 module.exports = {
     register,
     login,
-    createPost
+    createPost,
+    deletePost
 }
