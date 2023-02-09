@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 module.exports = (req, res) => {
-    res.send('editing a post')
+    res.send('Edit Post')
 }

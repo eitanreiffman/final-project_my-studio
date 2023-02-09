@@ -6,7 +6,7 @@
 
     <div class="card mt-4">
         <div class="card-body bg-warning-subtle">
-            <h4 class="card-title"><%= locals.post.title %></h4>
+            <h4 class="card-title"><%= locals.post.title %> by <%= locals.post.user.username %></h4>
             <div class="card-text mb-2"><%= locals.post.description %></div>
             <!-- <audio id="audio1">
                 <source src="../../../public/songs/i_miss_you.mp3" type="audio/mpeg">
@@ -14,8 +14,8 @@
             <div class="d-flex">
                 <button class="btn btn-primary" data-songURL="https://p.scdn.co/mp3-preview/2a75235e1503256176f3552aeaa51de84eb23030?cid=cfc9b12363734e67b80643c87896ddfd">Play Song</button>
                 <button class="btn btn-danger mx-2">Stop</button>
-                <a class="btn btn-warning" href="/posts/<%= post.id %>">Edit Post</a>
-                <form action="posts/<%= post.id %>?_method=DELETE" method="post">
+                <a class="btn btn-warning" href="/posts/<%= locals.post.id %>">Edit Post</a>
+                <form action="?_method=DELETE" method="post">
                     <button type="submit" class="btn btn-dark mx-2">Delete</button>
                 </form>
             </div>

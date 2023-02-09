@@ -80,9 +80,23 @@ const deletePost = {
 
 }
 
+const editPost = {
+    type: PostType,
+    description: 'Edit a specific post by the ID',
+    args: {
+        id: { type: GraphQLID },
+        title: { type: GraphQLString },
+        description: { type: GraphQLString }
+    },
+    resolve(parent, args){
+        return Post.findByIdAndUpdate(args.id)
+    }
+}
+
 module.exports = {
     register,
     login,
     createPost,
-    deletePost
+    deletePost,
+    editPost
 }

@@ -7,6 +7,9 @@ module.exports = async (req, res) => {
             post(id: $id){
             title
             description
+            user{
+                username
+            }
         }
     }
 `
