@@ -1,4 +1,5 @@
 const express = require('express')
+const { Post } = require('../../models')
 const PostRouter = express.Router()
 // const multer  = require('multer')
 // const upload = multer({ dest: '../../public/songs/' })
@@ -15,6 +16,9 @@ PostRouter.route('/new')
 PostRouter.route('/:id')
     .get(require('./viewPost'))
     .delete(require('./delete'))
+
+PostRouter.route('/edit/:id')
+    .get(require('./editPost.view'))
     .put(require('./editPost'))
     
 // PostRouter.post('/new', upload.single('song'), (req, res) => {

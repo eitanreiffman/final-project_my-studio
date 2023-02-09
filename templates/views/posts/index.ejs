@@ -2,15 +2,15 @@
 
     <div class="container">
         <img src="/images/song_library.png" width="450px" alt="Song Library" class="img-fluid mx-auto d-block my-5">
-        <a href="/posts/new" class="btn btn-success">Upload New Song</a>
+        <a href="/posts/new" class="btn btn-primary">Upload New Song</a>
 
 
         <% posts.forEach(post => { %>
             <div class="card mt-4">
                 <div class="card-body bg-warning-subtle">
-                    <h4 class="card-title"><%= post.title %> by <%= post.user %></h4>
+                    <h4 class="card-title"><%= post.title %> by <%= post.user.username %></h4>
                     <div class="card-text mb-2"><%= post.description %></div>
-                    <button class="btn btn-primary" data-songURL="https://p.scdn.co/mp3-preview/2a75235e1503256176f3552aeaa51de84eb23030?cid=cfc9b12363734e67b80643c87896ddfd">Play Song</button>
+                    <button class="btn btn-success" data-songURL="https://p.scdn.co/mp3-preview/2a75235e1503256176f3552aeaa51de84eb23030?cid=cfc9b12363734e67b80643c87896ddfd">Play Song</button>
                     <button class="btn btn-danger mx-2">Stop</button>
                     <a href="/posts/<%= post.id %>" class="btn btn-info">See Song</a>
                 </div>

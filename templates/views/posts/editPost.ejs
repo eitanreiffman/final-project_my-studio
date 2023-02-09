@@ -1,0 +1,74 @@
+<%- include('../../partials/main_header.ejs') %>
+
+<div class="container">
+
+    <img src="/images/editsong.png" width="400px" alt="Edit Song" class="img-fluid mx-auto d-block m-5">
+
+    <form action="?_method=PUT" method="post" class="form-group">
+        <label for="title">Song Title</label>
+        <input required type="text" name="title" id="title" class="form-control" placeholder="Enter Song Title"/>
+        <!-- <div>
+            <div class="my-2">
+                <label for="genre">Specify Genre (may choose multiple if applicable)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Rock
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Folk
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Indie
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Hip Hop
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Rap
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Reggae
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Metal
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckChecked">
+                Jazz
+                </label>
+            </div>
+        </div> -->
+        <div class="my-2">    
+            <label for="description">Add Description</label>
+            <input required type="text" name="description" id="description" class="form-control" placeholder="Enter Song Description"/>
+        </div>
+        <!-- <label for="file">Upload MP3 File</label>
+        <input id="song" type="file" name="song" class="form-control my-2"/> -->
+        <button type="submit" class="btn btn-warning form-control my-3">Post Song</button>
+    </form>
+
+</div>
+
+<%- include('../../partials/footer.ejs') %>

@@ -89,7 +89,10 @@ const editPost = {
         description: { type: GraphQLString }
     },
     resolve(parent, args){
-        return Post.findByIdAndUpdate(args.id)
+        return Post.findByIdAndUpdate(args.id, {
+            title: args.title,
+            description: args.description
+        })
     }
 }
 

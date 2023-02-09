@@ -5,6 +5,7 @@ module.exports = async (req, res) => {
     const query = `
         query ($id: ID!){
             post(id: $id){
+            id
             title
             description
             user{
