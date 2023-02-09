@@ -7,11 +7,12 @@
 
         <% posts.forEach(post => { %>
             <div class="card mt-4">
-                <div class="card-body">
-                    <h4 class="card-title"><%= post.title %></h4>
+                <div class="card-body bg-warning-subtle">
+                    <h4 class="card-title"><%= post.title %> by <%= post.user %></h4>
                     <div class="card-text mb-2"><%= post.description %></div>
                     <button class="btn btn-primary" data-songURL="https://p.scdn.co/mp3-preview/2a75235e1503256176f3552aeaa51de84eb23030?cid=cfc9b12363734e67b80643c87896ddfd">Play Song</button>
-                    <button class="btn btn-danger">Stop</button>
+                    <button class="btn btn-danger mx-2">Stop</button>
+                    <a href="/posts/<%= post.id %>" class="btn btn-info">See Song</a>
                 </div>
             </div>
         <% }) %>

@@ -2,7 +2,7 @@ const { Post } = require("../../models")
 
 module.exports = (req, res) => {
     res.render('posts/new', {
-         user: req.verifiedUser,
+        userLoggedIn: req.verifiedUser,
          post: new Post()
     })
 }

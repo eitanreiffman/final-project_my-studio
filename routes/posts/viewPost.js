@@ -23,6 +23,6 @@ module.exports = async (req, res) => {
     )
     const post = data.data.post
 
-    res.render('posts/viewPost', {user: req.verifiedUser, post: post} )
+    res.render('posts/viewPost', {userLoggedIn: req.verifiedUser, post: post} )
 }
 

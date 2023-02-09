@@ -7,6 +7,10 @@ module.exports = async (req, res) => {
             id
             title
             description
+            userId
+            user {
+                username
+            }
         }
     }
 `
@@ -22,6 +26,7 @@ module.exports = async (req, res) => {
         }
     )
     const posts = data.data.posts
+    console.log(posts)
 
-    res.render('posts', { posts: posts, user: req.verifiedUser })
+    res.render('posts', { posts: posts, userLoggedIn: req.verifiedUser })
 }

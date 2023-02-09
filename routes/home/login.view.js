@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-    res.render('login', { user: req.verifiedUser })
+    res.render('login', { userLoggedIn: req.verifiedUser })
 }

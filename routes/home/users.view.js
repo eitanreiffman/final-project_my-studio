@@ -23,5 +23,5 @@ module.exports = async (req, res) => {
 )
     const users = data.data.users
     console.log(users)
-    res.render('users', { users: users, user: req.verifiedUser })
+    res.render('users', { users: users, userLoggedIn: req.verifiedUser })
 }
