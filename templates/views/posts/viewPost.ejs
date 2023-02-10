@@ -16,6 +16,7 @@
                 <form action="?_method=DELETE" method="post">
                     <button type="submit" class="btn btn-dark m-3">Delete</button>
                 </form>
+                <a class="btn btn-info m-3" href="/posts/edit/<%= locals.post.id %>">Add Revision</a>
             </div>
         </div>
     </div>
@@ -24,38 +25,41 @@
 
 <script>
 
-var playSong;
 
-const startSongButton = e => {
-    let button = e.target;
-    let url = button.dataset.songurl;
-    if (playSong){
-        playSong.pause()
-    };
-    playSnippet(url);
-};
 
-const playSnippet = async songURL => {
-    try{
-        playSong = new Audio(songURL);
-        playSong.play();
-    } catch(err){
-        console.log(err)
-    }
-};
 
-const stopSnippet = () => {
-    playSong.pause();
-};
+// var playSong;
 
-const buttons = document.getElementsByTagName('button');
+// const startSongButton = e => {
+//     let button = e.target;
+//     let url = button.dataset.songurl;
+//     if (playSong){
+//         playSong.pause()
+//     };
+//     playSnippet(url);
+// };
 
-for (let button of buttons){
-    button.addEventListener('click', startSongButton);
-};
+// const playSnippet = async songURL => {
+//     try{
+//         playSong = new Audio(songURL);
+//         playSong.play();
+//     } catch(err){
+//         console.log(err)
+//     }
+// };
 
-const stopButton = document.getElementById('songStopper');
-stopButton.addEventListener('click', stopSnippet);
+// const stopSnippet = () => {
+//     playSong.pause();
+// };
+
+// const buttons = document.getElementsByTagName('button');
+
+// for (let button of buttons){
+//     button.addEventListener('click', startSongButton);
+// };
+
+// const stopButton = document.getElementById('songStopper');
+// stopButton.addEventListener('click', stopSnippet);
 
 </script>
 
