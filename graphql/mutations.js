@@ -1,8 +1,8 @@
 const { GraphQLString, GraphQLID } = require("graphql");
-const { User, Post } = require("../models");
+const { User, Post, Revision } = require("../models");
 const brcrypt = require('bcrypt');
 const { createJSONWebToken } = require('../util/auth')
-const { PostType } = require('./types')
+const { PostType, RevisionType } = require('./types')
 
 
 const register = {
@@ -100,10 +100,33 @@ const editPost = {
     }
 }
 
+const createRevision = {
+    type: RevisionType,
+    description: 'Add a revision to an existing post',
+    args: {
+        id: { type: GraphQLID },
+        userId: { type: GraphQLString },
+        postId: { type: GraphQLString },
+        description: { type: GraphQLString },
+        songFile: { type: GraphQLString }
+    },
+    async resolve(parent, args){
+        const revision = new Revision({
+            userId: args.userId,
+            postId: args.postId,
+            description: args.description,
+            songFile: args.songFile
+        })
+        revision.save();
+        return revision.id
+    }
+}
+
 module.exports = {
     register,
     login,
     createPost,
     deletePost,
-    editPost
+    editPost,
+    createRevision
 }

@@ -1,12 +1,8 @@
 const mongoose = require('mongoose')
 
 
-const postSchema = new mongoose.Schema(
+const revisionSchema = new mongoose.Schema(
     {
-        title: {
-            type: String,
-            required: true
-        },
         description: {
             type: String,
             required: true
@@ -18,6 +14,10 @@ const postSchema = new mongoose.Schema(
         userId: {
             type: String,
             required: true
+        },
+        postId: {
+            type: String,
+            required: true
         }
     },
     { timestamps: true }
@@ -25,4 +25,4 @@ const postSchema = new mongoose.Schema(
 
 
 
-module.exports = mongoose.model('Post', postSchema)
+module.exports = mongoose.model('Revision', revisionSchema)

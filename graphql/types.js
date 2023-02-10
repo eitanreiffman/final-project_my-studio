@@ -1,5 +1,5 @@
-const { GraphQLObjectType, GraphQLID, GraphQLString } = require("graphql");
-const { User, Post } = require('../models')
+const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLList } = require("graphql");
+const { User, Post, Revision } = require('../models')
 
 
 
@@ -12,7 +12,7 @@ const UserType = new GraphQLObjectType(
             username: { type: GraphQLString },
             email: { type: GraphQLString },
             posts: {
-                type: PostType,
+                type: GraphQLList(PostType),
                 resolve(parent, args){
                     return Post.find( { userId: parent.id } )
                 }
@@ -30,6 +30,12 @@ const PostType = new GraphQLObjectType(
             title: { type: GraphQLString },
             description: { type: GraphQLString },
             songFile: { type: GraphQLString },
+            revisions: {
+                type: GraphQLList(RevisionType),
+                resolve(parent, args){
+                    return Revision.find( { postId: parent.id } )
+                }
+            },
             userId: { type: GraphQLID },
             user: {
                 type: UserType,
@@ -41,8 +47,23 @@ const PostType = new GraphQLObjectType(
     }
 )
 
+const RevisionType = new GraphQLObjectType(
+    {
+        name: 'Revision',
+        description: 'Revision Type',
+        fields: () => ({
+            id: { type: GraphQLID },
+            description: { type: GraphQLString },
+            songFile: { type: GraphQLString },
+            userId: { type: GraphQLID },
+            postId: { type: GraphQLID }
+        })
+    }
+)
+
 
 module.exports = {
     UserType,
-    PostType
+    PostType,
+    RevisionType
 };

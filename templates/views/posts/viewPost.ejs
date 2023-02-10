@@ -20,47 +20,22 @@
             </div>
         </div>
     </div>
+        
+    <!-- <% revisions.forEach(revision => { %>
+        <div class="card mt-4">
+            <div class="card-body bg-info-subtle">
+                <h6 class="card-text m-3 fst-italic"><%= locals.revision.description %></h6>
+                <h6 class="card-text m-3 fst-italic">Contributor: <%= locals.revision.user.username %></h6>
+                <audio controls>
+                    <source src="/songs/<%= locals.revision.songFile %>" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    <% }) %> -->
+
+
+
 </div>
 
-
-<script>
-
-
-
-
-// var playSong;
-
-// const startSongButton = e => {
-//     let button = e.target;
-//     let url = button.dataset.songurl;
-//     if (playSong){
-//         playSong.pause()
-//     };
-//     playSnippet(url);
-// };
-
-// const playSnippet = async songURL => {
-//     try{
-//         playSong = new Audio(songURL);
-//         playSong.play();
-//     } catch(err){
-//         console.log(err)
-//     }
-// };
-
-// const stopSnippet = () => {
-//     playSong.pause();
-// };
-
-// const buttons = document.getElementsByTagName('button');
-
-// for (let button of buttons){
-//     button.addEventListener('click', startSongButton);
-// };
-
-// const stopButton = document.getElementById('songStopper');
-// stopButton.addEventListener('click', stopSnippet);
-
-</script>
 
 <%- include('../../partials/footer.ejs') %>
