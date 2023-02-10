@@ -8,7 +8,7 @@
         <% posts.forEach(post => { %>
             <div class="card mt-4">
                 <div class="card-body bg-warning-subtle">
-                    <h4 class="card-title m-2"><%= post.title %> by <%= post.user.username %></h4>
+                    <h4 class="card-title m-2">"<%= post.title %>" by <%= post.user.username %></h4>
                     <h6 class="card-text m-3"><%= post.description %></h6>
                     <audio controls>
                         <source src="/songs/<%= post.songFile %>" type="audio/mpeg">

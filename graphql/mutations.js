@@ -102,9 +102,8 @@ const editPost = {
 
 const createRevision = {
     type: RevisionType,
-    description: 'Add a revision to an existing post',
+    description: 'Add a revision that corresponds to an existing post',
     args: {
-        id: { type: GraphQLID },
         userId: { type: GraphQLString },
         postId: { type: GraphQLString },
         description: { type: GraphQLString },

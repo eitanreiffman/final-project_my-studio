@@ -1,6 +1,8 @@
 const axios = require('axios')
 
 module.exports = async (req, res) => {
+    console.log(req.body)
+    console.log(req.cookies)
     const postInputs = req.body;
     const postData = {
         description: postInputs.description,
@@ -31,7 +33,7 @@ module.exports = async (req, res) => {
                 }
             )
 
-            res.redirect(`/posts/${postId}`)
+        res.redirect(`/posts/${postId}`)
             
         } catch(err) {
             console.log(err)
