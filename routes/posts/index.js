@@ -19,6 +19,10 @@ PostRouter.route('/edit/:id')
     .get(require('./editPost.view'))
     .put(require('./editPost'))
 
+PostRouter.route('/revisions/:id')
+    .get(require('./addRevision.view'))
+    .post(require('./addRevision'))
+
 // PostRouter.post('/new', upload.single('song'), (req, res) => {
 //         console.log(req.file, req.body)
 //     })

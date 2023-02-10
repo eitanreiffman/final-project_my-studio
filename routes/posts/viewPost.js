@@ -9,12 +9,20 @@ module.exports = async (req, res) => {
             title
             description
             songFile
-            user{
-                username
+            userId
+            user {username}
+            revisions {
+                id
+                description
+                songFile
+                userId
+                postId
+                user {username}
             }
         }
     }
 `
+
     const { data } = await axios.post(process.env.GRAPHQL_ENDPOINT,
         {
             query: query,
@@ -27,6 +35,7 @@ module.exports = async (req, res) => {
         }
     )
     const post = data.data.post
+    const revisions = post.revisions
 
-    res.render('posts/viewPost', {userLoggedIn: req.verifiedUser, post: post} )
+    res.render('posts/viewPost', {userLoggedIn: req.verifiedUser, post: post, revisions: revisions} )
 }

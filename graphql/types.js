@@ -55,8 +55,14 @@ const RevisionType = new GraphQLObjectType(
             id: { type: GraphQLID },
             description: { type: GraphQLString },
             songFile: { type: GraphQLString },
-            userId: { type: GraphQLID },
-            postId: { type: GraphQLID }
+            userId: { type: GraphQLString },
+            user: {
+                type: UserType,
+                resolve(parent, args){
+                    return User.findById(parent.userId)
+                }
+            },
+            postId: { type: GraphQLString }
         })
     }
 )

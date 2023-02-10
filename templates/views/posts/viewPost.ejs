@@ -16,22 +16,22 @@
                 <form action="?_method=DELETE" method="post">
                     <button type="submit" class="btn btn-dark m-3">Delete</button>
                 </form>
-                <a class="btn btn-info m-3" href="/posts/edit/<%= locals.post.id %>">Add Revision</a>
+                <a class="btn btn-info m-3" href="/posts/revisions/<%= locals.post.id %>">Add Revision</a>
             </div>
         </div>
     </div>
-        
-    <!-- <% revisions.forEach(revision => { %>
+    
+    <% revisions.forEach(revision => { %>
         <div class="card mt-4">
             <div class="card-body bg-info-subtle">
-                <h6 class="card-text m-3 fst-italic"><%= locals.revision.description %></h6>
-                <h6 class="card-text m-3 fst-italic">Contributor: <%= locals.revision.user.username %></h6>
+                <h6 class="card-text m-3 fst-italic"><%= revision.description %></h6>
+                <h6 class="card-text m-3 fst-italic">Contributor: <%= revision.user.username %></h6>
                 <audio controls>
-                    <source src="/songs/<%= locals.revision.songFile %>" type="audio/mpeg">
+                    <source src="/songs/<%= revision.songFile %>" type="audio/mpeg">
                 </audio>
             </div>
         </div>
-    <% }) %> -->
+    <% }) %>
 
 
 
