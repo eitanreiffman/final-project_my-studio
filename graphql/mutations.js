@@ -53,12 +53,14 @@ const createPost = {
     args: {
         title: { type: GraphQLString },
         description: { type: GraphQLString },
+        songFile: { type: GraphQLString },
         userId: { type: GraphQLID }
     },
     async resolve(parent, args){
         const post = new Post({
             title: args.title,
             description: args.description,
+            songFile: args.songFile,
             userId: args.userId
         });
 
@@ -86,12 +88,14 @@ const editPost = {
     args: {
         id: { type: GraphQLID },
         title: { type: GraphQLString },
-        description: { type: GraphQLString }
+        description: { type: GraphQLString },
+        songFile: { type: GraphQLString }
     },
     resolve(parent, args){
         return Post.findByIdAndUpdate(args.id, {
             title: args.title,
-            description: args.description
+            description: args.description,
+            songFile: args.songFile
         })
     }
 }

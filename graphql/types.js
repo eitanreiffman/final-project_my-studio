@@ -29,6 +29,7 @@ const PostType = new GraphQLObjectType(
             id: { type: GraphQLID },
             title: { type: GraphQLString },
             description: { type: GraphQLString },
+            songFile: { type: GraphQLString },
             userId: { type: GraphQLID },
             user: {
                 type: UserType,

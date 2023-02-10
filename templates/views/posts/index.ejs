@@ -8,12 +8,12 @@
         <% posts.forEach(post => { %>
             <div class="card mt-4">
                 <div class="card-body bg-warning-subtle">
-                    <h4 class="card-title"><%= post.title %> by <%= post.user.username %></h4>
-                    <h6 class="card-text mb-2"><%= post.description %></h6>
+                    <h4 class="card-title m-2"><%= post.title %> by <%= post.user.username %></h4>
+                    <h6 class="card-text m-3"><%= post.description %></h6>
                     <audio controls>
-                        <source src="/songs/i_miss_you.mp3" type="audio/mpeg">
+                        <source src="/songs/<%= post.songFile %>" type="audio/mpeg">
                     </audio>
-                    <a href="/posts/<%= post.id %>" class="btn btn-secondary p-1 w-100">View Song</a>
+                    <a href="/posts/<%= post.id %>" class="btn btn-secondary my-2 w-100">View Song</a>
                 </div>
             </div>
         <% }) %>

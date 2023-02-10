@@ -7,6 +7,7 @@ module.exports = async (req, res) => {
             id
             title
             description
+            songFile
             userId
             user {
                 username

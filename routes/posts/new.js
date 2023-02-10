@@ -7,14 +7,16 @@ module.exports = async (req, res) => {
     const postData = {
         title: postInputs.title,
         description: postInputs.description,
+        songFile: postInputs.songFile,
         userId: req.verifiedUser._id
     }
     try {
         const mutation = `
-        mutation ($title: String!, $description: String!, $userId: ID!){
+        mutation ($title: String!, $description: String!, $songFile: String!, $userId: ID!){
             createPost(
                 title: $title,
                 description: $description,
+                songFile: $songFile,
                 userId: $userId
             )
         }
@@ -40,21 +42,3 @@ module.exports = async (req, res) => {
         console.log('Post not successful')
     }
 };
-
-
-// module.exports = async (req, res) => {
-//     const songInputs =  req.body
-//     console.log(songInputs)
-    // const post = new Post({
-    //     title: req.body.title,
-    //     // genres: req.body.genres,
-    //     description: req.body.description,
-    //     // file: req.body.file
-    // })
-    // try {
-    //     post = await post.save()
-    //     res.redirect(`/posts/${post.id}`)
-    // } catch (err) {
-    //     res.render('posts/new', { post: post })
-    // }
-// }

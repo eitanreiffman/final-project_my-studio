@@ -33,6 +33,10 @@ const postSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        songFile: {
+            type: String,
+            required: false
+        },
         userId: {
             type: String,
             required: true

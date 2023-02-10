@@ -8,6 +8,7 @@ module.exports = async (req, res) => {
             id
             title
             description
+            songFile
             user{
                 username
             }
@@ -29,4 +30,3 @@ module.exports = async (req, res) => {
 
     res.render('posts/viewPost', {userLoggedIn: req.verifiedUser, post: post} )
 }
-
