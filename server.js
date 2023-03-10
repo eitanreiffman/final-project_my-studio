@@ -26,13 +26,12 @@ app.use(cors())
 
 // Calling our dotenv function
 // Config loads .env file contents into process.env
-// For instance, every time I want to access the secret key, call this:
+// For instance, every time I want to access the secret key, I call this:
 // process.env.JWT_SECRET;
 dotenv.config();
 
 // Connecting to our MongoDB database
 connectDB();
-
 
 // Specifying root directory from which we're serving our static files
 app.use(express.static('public'))
