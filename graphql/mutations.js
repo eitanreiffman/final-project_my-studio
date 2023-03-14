@@ -1,6 +1,6 @@
 const { GraphQLString, GraphQLID } = require("graphql");
 const { User, Post, Revision } = require("../models");
-const brcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const { createJSONWebToken } = require('../util/auth')
 const { PostType, RevisionType } = require('./types')
 
@@ -19,7 +19,7 @@ const register = {
             throw new Error('Sorry, a user with this email already exists. Please choose another one.')
         }
         const { username, email, password } = args;
-        const passwordHash = await brcrypt.hash(password, 10);
+        const passwordHash = await bcrypt.hash(password, 10);
         const user = new User({ username, email, password: passwordHash });
         await user.save();
         const token = createJSONWebToken(user);
@@ -37,7 +37,7 @@ const login = {
     async resolve(parent, args){
         const user = await User.findOne({ username: args.username });
         const hashedPassword = user?.password || ""
-        const correctPassword = await brcrypt.compare(args.password, hashedPassword);
+        const correctPassword = await bcrypt.compare(args.password, hashedPassword);
         if (!user || !correctPassword){
             throw new Error('Sorry, invalid credentials.')
         }
